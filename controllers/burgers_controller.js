@@ -18,12 +18,14 @@ router.post("/api/burgers", function (req, res) {
 
 router.put("/api/burgers/:id", function (req, res) {
     burger.updateOne(req.params.id, function () {
-        res.redirect('/');
+        res.status(200).end();
     });
 });
 
-// router.delete("/api/burgers/:id", function (req, res) {
-
-// });
+router.delete("/api/burgers/:id", function (req, res) {
+    burger.deleteThis(req.params.id, function () {
+        res.status(200).end();
+    });
+});
 
 module.exports = router;

@@ -9,9 +9,9 @@ var orm = {
             callback(result);
         });
     },
-    insertOne: function (burger, callback) {
-        var queryString = "INSERT INTO burgers (burger_name) VALUES (burger)";
-        connection.query(queryString, burger, function (err, result) {
+    insertOne: function (burger_name, callback) {
+        var queryString = "INSERT INTO burgers (burger_name) VALUES ('" + burger_name + "')";
+        connection.query(queryString, [burger_name], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -19,13 +19,22 @@ var orm = {
         });
 
     },
-    updateOne: function (callback) {
+    updateOne: function (burger_id, callback) {
         var queryString = "UPDATE burgers SET ? WHERE ?";
         var queryArray = [
             { devoured: true },
-            { id: burgerID }
+            { id: burger_id }
         ]
         connection.query(queryString, queryArray, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            callback(result);
+        });
+    },
+    deleteThis: function (burger_id, callback) {
+        var queryString = "DELETE FROM burgers WHERE ?";
+        connection.query(queryString, [{ id: burger_id }], function (err, result) {
             if (err) {
                 throw err;
             }

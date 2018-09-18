@@ -16,6 +16,12 @@ var burger = {
         orm.updateOne(burger_id, function (res) {
             callback(res);
         });
+    },
+
+    deleteThis: function (burger_id, callback) {
+        orm.deleteThis(burger_id, function (res) {
+            callback(res);
+        });
     }
 
 }

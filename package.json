@@ -2,13 +2,17 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "##Description ##Installation ##About",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pjsteininger/burger.git"
+  },
+  "engines" : {
+    "node": "8.11.2",
+    "npm": "6.2.0"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +25,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "npm": "^6.4.1"
   }
 }

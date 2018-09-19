@@ -4,7 +4,8 @@
   "description": "##Description ##Installation ##About",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm install --production"
   },
   "repository": {
     "type": "git",
